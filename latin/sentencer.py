@@ -18,7 +18,7 @@ def decline_noun(noun, is_plural, case):
     obj['case'] = case
     obj['number'] = 'P' if is_plural else 'S'
     obj['inflected'] = obj['lex']
-    decline(obj, case, is_plural, obj['gender'])
+    obj = decline(obj, case, is_plural, obj['gender'])
     return obj
 
 def append_modifiers_to_noun(noun, adjectives, adj_to_add = None):
@@ -35,7 +35,7 @@ def append_modifiers_to_noun(noun, adjectives, adj_to_add = None):
         new_adj['is_plural'] = noun['is_plural']
         new_adj['case'] = noun['case']
         new_adj['number'] = noun['number']
-        decline(new_adj, noun['case'], noun['is_plural'], noun['gender'])
+        new_adj = decline(new_adj, noun['case'], noun['is_plural'], noun['gender'])
         noun['modifiers'].append(new_adj)
 
 

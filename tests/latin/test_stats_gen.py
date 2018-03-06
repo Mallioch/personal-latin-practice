@@ -28,6 +28,6 @@ class StatsGenTests(unittest.TestCase):
 
     def test_word_to_stats_adj_acc_pl(self):
         adj = find_by_lex(adjectives(), 'antīquus')
-        decline(adj, 'A', True, 'm')
+        adj = decline(adj, 'A', True, 'm')
         self.assertEqual('antīquus-A-AMP', word_to_stats(adj))
         pass

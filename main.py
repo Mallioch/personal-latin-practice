@@ -71,6 +71,8 @@ def create_sentence():
 
             # put adjectives after nouns
             if word_type == 'nominal':
+                if 'inflected' not in word:
+                    print('no inflected', word)
                 foreign.append(word['inflected'])
 
             for mod in word['modifiers']:
@@ -102,12 +104,6 @@ def create_sentence():
     print('latin', colors.fg.blue + ' '.join(str(x) for x in foreign) + colors.reset)
     print('stats', '|'.join(str(x) for x in stats))
     print('english', colors.fg.green + ' '.join(str(x) for x in english) + colors.reset)
-
-# def dict_to_list(words):
-#     list = []
-#     for key in words:
-#         print('key?', key)
-#         list.append({ 'key': key, 'obj': words[key] })
 
 def random_pos(pos):
     list = lexicon.adjectives()

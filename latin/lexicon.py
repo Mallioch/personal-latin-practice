@@ -46,7 +46,7 @@ _nominals = [
     { 'lex': 'porta',       'stem': 'port',        'gender': 'f',   'decl': '1',      'subj': False, 'glosses': ['gate', 'entrance'] },
     { 'lex': 'puella',      'stem': 'puell',       'gender': 'f',   'decl': '1',      'subj': True,  'glosses': ['girl'] },
     { 'lex': 'puer',        'stem': 'puer',        'gender': 'm',   'decl': '2',      'subj': True,  'glosses': ['boy'] },
-    { 'lex': 'rosa',        'stem': 'ro s',        'gender': 'f',   'decl': '1',      'subj': False, 'glosses': ['rose'] },
+    { 'lex': 'rosa',        'stem': 'ros',        'gender': 'f',   'decl': '1',      'subj': False, 'glosses': ['rose'] },
     { 'lex': 'sapientia',   'stem': 'sapienti',    'gender': 'f',   'decl': '1',      'subj': True,  'glosses': ['wisdom'] },
     { 'lex': 'sententia',   'stem': 'sententi',    'gender': 'f',   'decl': '1',      'subj': False, 'glosses': ['feeling', 'thought', 'opinion', 'vote', 'sentence'] },
     { 'lex': 'vīta',        'stem': 'vīt',         'gender': 'f',   'decl': '1',      'subj': False, 'glosses': ['life', 'mode of life'] },
