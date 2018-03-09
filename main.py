@@ -101,8 +101,9 @@ def create_sentence():
         english.append(word_text)
 
         if word_type == 'verb':
-            print('person', construct['person'], 'number', construct['number'])
-            stats.append(word_type + '-' + word['lex'] + '-' + construct['person'] + '-' + str(construct['number']))
+            stats.append(word['lex'] + '-V-' + word['parsing'])
+        elif word_type == 'nominal':
+            stats.append(word['lex'] + '-N-' + word['parsing'])
         else:
             stats.append(word_type + '-' + word['lex'])
 

@@ -15,6 +15,7 @@ class ConjugationsTests(unittest.TestCase):
         is_plural = True if parsing[2] == 'P' else False
         verb = conjugate(verb, parsing[0], parsing[1], is_plural)
         self.assertEqual(verb['inflected'], expected)
+        self.assertEqual(verb['parsing'], parsing)
 
     def test_conjugate_first_pres_sing(self):
         self.helper('amō', 'P2S', 'amās')

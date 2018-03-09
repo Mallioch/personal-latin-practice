@@ -75,12 +75,12 @@ def create(nominals, verbs, personal_pronouns, adverbs, adjectives, specials):
         output['person'] = '2'
     elif person_rand < 7:
         output['person'] = '3'
-        gender = 'm'
+        gender = 'M'
         gender_rand = random.randint(0, 3)
         if gender_rand == 1:
-            gender = 'f'
+            gender = 'F'
         elif gender_rand == 2:
-            gender = 'n'
+            gender = 'N'
         output['gender'] = gender
     else:
         output['person'] = 'obj'

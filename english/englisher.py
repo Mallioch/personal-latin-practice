@@ -10,10 +10,10 @@ def pronoun(construct):
         elif construct['person'] == '3':
             if construct['number'] == '2':
                 pronoun = 'they'
-            elif construct['gender'] == 'm':
+            elif construct['gender'] == 'M':
                 pronoun = 'he'
-            elif construct['gender'] == 'f':
+            elif construct['gender'] == 'F':
                 pronoun = 'she'
-            elif construct['gender'] == 'n':
+            elif construct['gender'] == 'N':
                 pronoun = 'it'
     return pronoun

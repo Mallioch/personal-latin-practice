@@ -64,6 +64,13 @@ def conjugate(word, tense, person, is_plural):
     if person == 'obj':
         person = '3'
 
+    parsing = tense + person
+    if is_plural:
+        parsing = parsing + 'P'
+    else:
+        parsing = parsing + 'S'
+    word['parsing'] = parsing
+
     key = person + ('-p' if is_plural else '-s')
 
     if word['conj'] == '1':
