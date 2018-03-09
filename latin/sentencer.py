@@ -42,9 +42,19 @@ def append_modifiers_to_noun(noun, adjectives, adj_to_add = None):
 def modify_verb(person, is_plural, verb, adverbs, specials):
     verb['modifiers'] = []
 
-    #print('teh person', person)
-    conjugate(verb, 'present', person, is_plural)
-    #print('dat verb', verb)
+    # print('teh person', person)
+    tense = 'P'
+    verb['english_tense'] = 'present'
+    tense_rand = random.randint(1, 3)
+    if tense_rand == 1:
+        tense = 'F'
+        verb['english_tense'] = 'future'
+    elif tense_rand == 2:
+        tense = 'I'
+        verb['english_tense'] = 'imperfect'
+
+    verb = conjugate(verb, tense, person, is_plural)
+    # print('dat verb', verb)
 
     # adverb?
     if random.randint(0, 3) == 2:
@@ -52,6 +62,8 @@ def modify_verb(person, is_plural, verb, adverbs, specials):
 
     if random.randint(0, 2) == 1:
         verb['modifiers'].append(specials['nōn'])
+
+    return verb
 
 
 def create(nominals, verbs, personal_pronouns, adverbs, adjectives, specials):
@@ -86,9 +98,8 @@ def create(nominals, verbs, personal_pronouns, adverbs, adjectives, specials):
 
 
     verb = dict(verbs[random.randint(0, len(verbs) - 1)])
+    verb = modify_verb(output['person'], output['number'] == 2, verb, adverbs, specials)
     sent.append(verb)
-
-    modify_verb(output['person'], output['number'] == 2, verb, adverbs, specials)
 
     if verb['type'] == 'trans':
         obj = dict(nominals[random.randint(0, len(nominals) - 1)])

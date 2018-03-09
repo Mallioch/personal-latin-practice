@@ -85,6 +85,7 @@ def create_sentence():
 
             # put adverbs before verbs
             if word_type == 'verb':
+                print('word', word)
                 foreign.append(word['inflected'])
 
 
@@ -92,7 +93,12 @@ def create_sentence():
             foreign.append(word['lex'])
 
 
-        english.append(word['glosses'][random.randint(0, len(word['glosses']) - 1)])
+        word_text = word['glosses'][random.randint(0, len(word['glosses']) - 1)]
+        if word_type == 'verb':
+            word_text = '[' + word['english_tense'] + ']' + word_text
+
+
+        english.append(word_text)
 
         if word_type == 'verb':
             print('person', construct['person'], 'number', construct['number'])
